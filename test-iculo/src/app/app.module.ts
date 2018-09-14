@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ErrorComponent } from './componentes/error/error.component';
+import { CuestionarioComponent } from './componentes/cuestionario/cuestionario.component';
+import { TemaComponent } from './componentes/tema/tema.component';
+import { PreguntaComponent } from './componentes/pregunta/pregunta.component';
+import { FormsModule } from '@angular/forms';
 
 const router = [
-  { path: 'bienvenida', component: BienvenidoComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', component: ErrorComponent }
 ];
@@ -16,13 +18,16 @@ const router = [
 @NgModule({
   declarations: [
     AppComponent,
-    BienvenidoComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    CuestionarioComponent,
+    TemaComponent,
+    PreguntaComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(router)
+    RouterModule.forRoot(router),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
