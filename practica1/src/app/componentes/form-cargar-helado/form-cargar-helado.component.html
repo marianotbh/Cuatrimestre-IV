@@ -1,0 +1,47 @@
+<div *ngIf="show">
+  <div class="shade">
+    <div class="container">
+      <div class="row">
+        <div id="formularioCarga" class="border rounded shadow col-12 col-md-7 col-lg-5 col-xl-4 m-auto">
+          <h1>Cargue su sabor:</h1>
+          <div class="form-group">
+            <label for="inputSabor">Sabor:</label>
+            <input [(ngModel)]="sabor" id="inputSabor" type="name" class="form-control" placeholder="Nuevo sabor"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="inputTipo">Tipo: </label>
+            <div id="inputTipo">
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input [(ngModel)]="tipo" type="radio" class="form-check-input" name="opt" value="Crema" required>Crema
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input [(ngModel)]="tipo" type="radio" class="form-check-input" name="opt" value="Agua" required>Agua
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputSabor">Cantidad:</label>
+            <input [(ngModel)]="cantidad" id="inputSabor" type="number" min="1" max="99" maxlength="3" minlength="1"
+              class="form-control" placeholder="En kilos" required>
+          </div>
+          <div class="form-group">
+            <label for="inputImagen">Cargue una imagen: </label>
+            <input [(ngModel)]="foto" id="inputImagen" type="file" value="" class="form-control-file">
+          </div>
+
+          <div class="row m-0">
+            <div class="btn-group w-100">
+              <button class="w-50 btn btn-primary" (click)="CargarHelado()">Cargar helado</button>
+              <button class="w-50 btn" (click)="show = false">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.shade {
+    position: fixed;
+    top:0;
+    left:0;
+    min-width:100%;
+    min-height:100%;
+    background-color:rgba(255,255,255,0.8);
+    z-index:999
+}
+
+#formularioCarga {
+    position: absolute;
+    background-color:white;
+    padding:25px 30px;
+    max-width:400px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:9999
+}
+
+#formularioCarga > * + * {
+    margin-top:15px !important;
+    padding-top:15px !important;
+    border-top:1px solid rgba(0,0,0,0.05);
+}

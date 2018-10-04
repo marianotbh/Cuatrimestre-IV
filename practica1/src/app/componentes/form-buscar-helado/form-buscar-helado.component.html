@@ -1,0 +1,30 @@
+<div *ngIf="show">
+  <div class="shade">
+    <div class="container">
+      <div class="row">
+        <div id="formularioBusqueda" class="border rounded shadow col-12 col-md-7 col-lg-5 col-xl-4 m-auto">
+          <h1>Búsqueda de sabor:</h1>
+          <input [(ngModel)]="input" type="text" class="form-control">
+          <div *ngIf="encontrado == true" class="text-center">
+            <img [src]="foto" class=" w-50 rounded-circle m-auto d-block">
+            <h4>{{sabor}}
+              <div class="d-inline" *ngIf="tipo == 'Crema'"> a la {{tipo}}</div>
+              <div class="d-inline" *ngIf="tipo == 'Agua'"> al {{tipo}}</div>
+            </h4>
+            <p class="card-text" *ngIf="cantidad > 1">Quedan: {{cantidad}}kgs</p>
+            <p class="card-text" *ngIf="cantidad == 1">Queda: {{cantidad}}kg</p>
+          </div>
+          <div *ngIf="encontrado == false">
+            <p>La búsqueda por {{input}} no tuvo resultados</p>
+          </div>
+          <div class="row m-0">
+            <div class="btn-group w-100">
+              <button class="w-50 btn btn-primary" (click)="BuscarHelado()">Buscar sabor</button>
+              <button class="w-50 btn" (click)="show = false">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
