@@ -1,0 +1,10 @@
+<div *ngIf="show">
+<div id="form" class="border rounded shadow col-12 col-md-7 col-lg-5 col-xl-4 m-auto">
+  <h1>Modelo encontrado:</h1>
+  <img [src]="foto">
+  <p>Marca: {{marca}}</p>
+  <p>Modelo: {{modelo}}</p>
+  <p>Puertas: {{puertas}}</p>
+  <button class="w-50 btn" (click)="show = false">Cerrar</button>
+</div>
+</div>

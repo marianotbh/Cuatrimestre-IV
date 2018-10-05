@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { HeladoService } from "../../servicios/helado.service";
+import { VehiculoService } from "../../servicios/vehiculo.service";
 
 @Component({
   selector: "app-card-boton",
@@ -7,23 +7,23 @@ import { HeladoService } from "../../servicios/helado.service";
   styleUrls: ["./card-boton.component.css"]
 })
 export class CardBotonComponent implements OnInit {
-  public heladoService: HeladoService;
+  public vehiculoService: VehiculoService;
 
   @Input()
   id: number;
   @Output()
-  eventHeladoEliminado:EventEmitter<any> = new EventEmitter();
+  eventVehiculoEliminado:EventEmitter<any> = new EventEmitter();
 
 
-  constructor(heladoService: HeladoService) {
-    this.heladoService = heladoService;
+  constructor(vehiculoService: VehiculoService) {
+    this.vehiculoService = vehiculoService;
   }
 
   ngOnInit() {}
 
   Eliminar() {
-    this.heladoService.Eliminar(this.id).subscribe(data => {
-      this.eventHeladoEliminado.emit(this.id);
+    this.vehiculoService.Eliminar(this.id).subscribe(data => {
+      this.eventVehiculoEliminado.emit(this.id);
     });
   }
 }

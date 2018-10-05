@@ -16,9 +16,11 @@ const httpOptions = {
 
 @Injectable()
 export class MiHttpService {
-  public host: string = "http://localhost/ApiHelados";
+  public host: string = "http://localhost:8080/ApiVehiculos";
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) {
+
+  }
 
   public httpGetOne<T>(action: string, id: string): Observable<T> {
     return this.http.get<T>(`${this.host}/${action}/${id}`, httpOptions).pipe(

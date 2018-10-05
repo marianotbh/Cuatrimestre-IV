@@ -1,0 +1,16 @@
+<div class="row w-100">
+
+  <app-form-alta [show]="formCargarDisplay" (onVehiculoCargado)="Refresh()"></app-form-alta>
+  <app-form-filtro [show]="formBuscarDisplay" (eventVehiculoEncontrado)="Mostrar($event)"></app-form-filtro>
+  <app-filter-result [show]="mostrar" [modelo]="modelo" [marca]="marca" [foto]="foto" [puertas]="puertas">
+  </app-filter-result>
+
+  <div class="m-0 btn-group w-100">
+    <button class="col-6 btn btn-primary" (click)="btnCargarClick()">+ Cargar un vehiculo</button>
+    <button class="col-6 btn btn-primary" (click)="btnBuscarClick()">Buscar un modelo</button>
+  </div>
+
+  <app-card-vehiculo class="col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let vehiculo of vehiculos" [id]="vehiculo.id" [marca]="vehiculo.marca"
+    [modelo]="vehiculo.modelo" [cantidadPuertas]="vehiculo.cantidadPuertas" [RutaDeFoto]="vehiculo.RutaDeFoto" (eventPassVehiculoEliminado)="Refresh()">
+  </app-card-vehiculo>
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="show">
+  <div class="shade">
+    <div class="container">
+      <div class="row">
+        <div id="form" class="border rounded shadow col-12 col-md-7 col-lg-5 col-xl-4 m-auto">
+          <h1>Búsqueda de modelo:</h1>
+          <input [(ngModel)]="input" type="text" class="form-control">
+          <div *ngIf="encontrado == false">
+            {{output}}
+          </div>
+          <div class="row m-0">
+            <div class="btn-group w-100">
+              <button class="w-50 btn btn-primary" (click)="BuscarVehiculo()">Buscar modelo</button>
+              <button class="w-50 btn" (click)="show = false">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

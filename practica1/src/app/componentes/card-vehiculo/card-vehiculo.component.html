@@ -1,0 +1,9 @@
+<div class="card">
+    <img class="card-img-top" [src]="RutaDeFoto" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">{{marca}} {{modelo}}
+      </h4>
+      <p class="card-text">{{cantidadPuertas}} puertas</p>
+      <app-card-boton [id]="id" (eventVehiculoEliminado)="PassEvent($event)"></app-card-boton>
+    </div>
+</div>
