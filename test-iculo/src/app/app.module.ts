@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Angular2CsvModule } from 'angular2-csv';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { DataTablesModule } from 'angular-datatables';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -11,7 +15,7 @@ import { PreguntaComponent } from './componentes/pregunta/pregunta.component';
 import { FormsModule } from '@angular/forms';
 
 const router = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -26,6 +30,9 @@ const router = [
   ],
   imports: [
     BrowserModule,
+    DataTablesModule,
+    Angular2CsvModule,
+    HighchartsChartModule,
     RouterModule.forRoot(router),
     FormsModule
   ],
